@@ -1,0 +1,29 @@
+<div class="container mt-5">
+
+    <mat-card id="card" style="text-align: center;">
+
+
+        <mat-card-content>
+            <form #loginForm="ngForm" (ngSubmit)="login(loginForm)">
+                <mat-form-field appearance="fill">
+                    <input matInput ngModel name="userName" id="userName" placeholder="UserName" required="required">
+                </mat-form-field><br />
+
+                <mat-form-field appearance="fill">
+                    <input type="password" matInput ngModel name="userPassword" id="userPassword" placeholder="Password"
+                        required="required">
+                </mat-form-field><br />
+                <button mat-raised-button color="primary" style="margin-right:5px;">Login</button>
+                <button mat-raised-button color="primary" style="margin-right:5px;">Register</button>
+            </form>
+
+            <div class="text-center">
+               
+            </div>
+        </mat-card-content>
+    </mat-card>
+<div class="text-center">
+    <br>
+    <button class="w-20" mat-raised-button type="button" (click)="registerUser()">Create an account</button>
+</div>
+</div>

@@ -1,0 +1,26 @@
+<mat-toolbar color="primary">
+<span>
+  Food-Delivery-Application
+  
+</span>
+<span class="space-buttons"></span>
+<button  style="margin-right: 5px;" *ngIf="! isLoggedIn()" mat-raised-button color="primary"  routerLink="/login">Login</button>
+<button  *ngIf="! isLoggedIn()" mat-raised-button color="primary"  routerLink="/register">Register</button>
+<button *ngIf="isLoggedIn()"  mat-raised-button color="primary"  (click)="logout()">Logout</button>
+</mat-toolbar>
+
+
+<mat-toolbar color="primary" *ngIf="isLoggedIn()">
+
+<button mat-raised-button color="primary" routerLink="/" style="margin-right: 6px;">Home</button>
+<button *ngIf="!isAdmin()" mat-raised-button color="primary" routerLink="/cart"  style="margin-right: 6px;">Cart</button>
+
+<button *ngIf="!isAdmin()" mat-raised-button color="primary" routerLink="/myOrders"  style="margin-right: 6px;">My Orders</button>
+
+<button *ngIf="isAdmin()" mat-raised-button color="primary" routerLink="/addNewProduct" style="margin-right: 6px;">Add Product</button>
+
+<button *ngIf="isAdmin()" mat-raised-button color="primary" routerLink="/showProductDetails" style="margin-right: 6px;">Show Product Details</button>
+
+<button *ngIf="isAdmin()" mat-raised-button color="primary" routerLink="/orderInformation">Order Information</button>
+
+</mat-toolbar>
